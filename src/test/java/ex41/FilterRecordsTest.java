@@ -1,13 +1,13 @@
-package org.example;
-
-import static org.junit.Assert.assertTrue;
+package ex41;
 
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class FilterRecordsTest
 {
     /**
      * Rigorous Test :-)

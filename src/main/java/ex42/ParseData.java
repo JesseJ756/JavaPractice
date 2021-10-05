@@ -12,36 +12,22 @@ import java.io.IOException;
 public class ParseData {
     public static void main(String[] args)
     {
-        String currentLine;
-        int token;
-        String[] tokensVal = new String[5];
         BufferedReader reader = null;
 
         // read file
         try
         {
             reader = new BufferedReader(new FileReader("src/main/java/ex42/exercise42_input.txt"));
-            currentLine = reader.readLine();
 
             System.out.print("Last      First     Salary\n");
-            System.out.print("--------------------------");
+            System.out.print("--------------------------\n");
 
             // WHILE line != null
-            while(currentLine != null)
-            {
-                // SPLIT string when ',' is found
-                tokensVal = currentLine.split(",", 3);
+            // PRINT letter
+            // find comma in line of file (method?)
+            // PRINT \tab
 
-                System.out.print("%s %s %s", tokensVal[0], tokensVal[1], tokensVal[2]);
-
-
-
-                currentLine = reader.readLine();
-            }
-                // WHILE char fo array line ist not \n
-                // PRINT letter
-                // find comma in line of file (method?)
-                // PRINT \tab
+            printOutput(reader);
 
 
         }
@@ -62,6 +48,27 @@ public class ParseData {
             {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public static void printOutput(BufferedReader reader) throws IOException
+    {
+        String currentLine;
+        String[] tokensVal;
+
+        currentLine = reader.readLine();
+
+        while(currentLine != null)
+        {
+            // SPLIT string when ',' is found
+            tokensVal = currentLine.split(",", 3);
+
+            for(String token : tokensVal)
+                System.out.format("%-10s", token);
+
+            System.out.print("\n");
+
+            currentLine = reader.readLine();
         }
     }
 }
