@@ -3,7 +3,7 @@
  *  Copyright 2021 Jesse Johnson
  */
 
-package ex41;
+package ex43;
 
 import org.junit.Test;
 
@@ -12,11 +12,8 @@ import static org.junit.Assert.assertTrue;
 /**
  * Unit test for simple App.
  */
-public class FilterRecordsTest
+public class WebsiteGeneratorTest
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
     public void shouldAnswerWithTrue()
     {
