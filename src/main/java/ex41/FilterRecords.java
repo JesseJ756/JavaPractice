@@ -12,31 +12,17 @@ import java.util.Collections;
 public class FilterRecords {
 
     public static void main(String[] args){
+        int numOfNames;
         int counter;
-        int numOfNames = 0;
-        String currentLine;
-        BufferedReader reader = null;
         BufferedWriter writer = null;
 
-        ArrayList<String> nameArray = new ArrayList<>();
+        ArrayList<String> nameArray;
 
         // READ file
         try
         {
-            File inputFile = new File("src/main/java/ex41/exercise41_input.txt");
-            FileReader fileReader = new FileReader(inputFile);
-            reader = new BufferedReader(fileReader);
-            currentLine = reader.readLine();
-
-            // WHILE loop, set counter to 0, iterate through file until EOF
-            // put name into array
-            // set number of names var to i
-            while(currentLine != null)
-            {
-                nameArray.add(currentLine);
-                currentLine = reader.readLine();
-                numOfNames++;
-            }
+            nameArray = getInputFromFile("src/main/java/ex41/exercise41_input.txt");
+            numOfNames = nameArray.size();
 
             // sort through names
             Collections.sort(nameArray);
@@ -65,20 +51,39 @@ public class FilterRecords {
         {
             try
             {
-                if(reader != null)
-                {
-                    reader.close();
-                }
                 if(writer != null)
                 {
                     writer.close();
                 }
-
             }
             catch(IOException e)
             {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static ArrayList<String> getInputFromFile(String s) throws IOException {
+        BufferedReader reader;
+        String currentLine;
+
+        ArrayList<String> nameArray = new ArrayList<>();
+
+
+        File inputFile = new File(s);
+        FileReader fileReader = new FileReader(inputFile);
+        reader = new BufferedReader(fileReader);
+        currentLine = reader.readLine();
+
+        // WHILE loop, set counter to 0, iterate through file until EOF
+        // put name into array
+        // set number of names var to i
+        while(currentLine != null)
+        {
+            nameArray.add(currentLine);
+            currentLine = reader.readLine();
+        }
+
+        return nameArray;
     }
 }
