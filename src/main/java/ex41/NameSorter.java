@@ -9,7 +9,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class FilterRecords {
+public class NameSorter {
 
     public static void main(String[] args){
         int numOfNames;
@@ -68,7 +68,6 @@ public class FilterRecords {
         String currentLine;
 
         ArrayList<String> nameArray = new ArrayList<>();
-
 
         File inputFile = new File(s);
         FileReader fileReader = new FileReader(inputFile);

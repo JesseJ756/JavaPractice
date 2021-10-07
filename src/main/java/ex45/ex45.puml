@@ -1,11 +1,8 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-autonumber
+WordFinder : + main()
+WordFinder : + fileToCharArray()
+WordFinder : + utilizeToUse()
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
 @enduml
