@@ -14,9 +14,9 @@ import java.util.Collections;
 
 public class WordFrequencyFinder
 {
-    ArrayList<String> wordArray = new ArrayList<>();
+    static ArrayList<String> wordArray = new ArrayList<>();
 
-    public void main(String[] args) throws IOException
+    public static void main(String[] args) throws IOException
     {
         //Scan for NEXTLINE of file
         //SPLIT ' ' for space into lineArray
@@ -37,7 +37,7 @@ public class WordFrequencyFinder
         ArrayList<String> inputWordArray;
         ArrayList<Integer> wordCount;
 
-        String inputFileName = "src/main/java/ex45/exercise46_input.txt";
+        String inputFileName = "src/main/java/ex46/exercise46_input.txt";
 
         inputWordArray = fileWordsToArray(inputFileName);
 
@@ -46,31 +46,41 @@ public class WordFrequencyFinder
         printOutput(wordCount);
     }
 
-    public void printOutput(ArrayList<Integer> wordCount)
+    public static void printOutput(ArrayList<Integer> wordCount)
     {
+        int j = 0;
+
         for(String word : wordArray)
         {
-            System.out.format("%-10s:", word);
+            word = word.concat(":");
+            System.out.format("%-10s", word);
 
-            for(int i = 0; i < wordCount.get(i); i++)
+            for(int i = 0; i < wordCount.get(j); i++)
             {
                 System.out.print("*");
             }
+
+            j++;
+
+            System.out.print("\n");
         }
     }
-    public ArrayList<Integer> countForEachWord(ArrayList<String> inputWordArray)
+    public static ArrayList<Integer> countForEachWord(ArrayList<String> inputWordArray)
     {
         int i;
-        int isIdentifiedWord = 0;
+        int isIdentifiedWord;
         ArrayList<Integer> wordCount = new ArrayList<>();
 
         for(String word : inputWordArray)
         {
+            isIdentifiedWord = 0;
+            System.out.format("word: %s\n", word);
             for(i = 0; i < wordArray.size(); i++)
             {
                 if(word.equalsIgnoreCase(wordArray.get(i)))
                 {
-                    wordCount.add(wordCount.get(i), 1);
+                    wordCount.set(i, wordCount.get(i) + 1);
+                    System.out.format("wordCount[%d]: %d\n", i, wordCount.get(i));
                     isIdentifiedWord = 1;
                 }
             }
@@ -78,14 +88,15 @@ public class WordFrequencyFinder
             if(isIdentifiedWord == 0)
             {
                 wordArray.add(word);
-                wordCount.set(i, 1);
+                wordCount.add(1);
+                System.out.format("In if wordCount[%d]: %d\n", i, wordCount.get(i));
             }
         }
 
         return wordCount;
     }
 
-    public ArrayList<String> fileWordsToArray(String s) throws IOException {
+    public static ArrayList<String> fileWordsToArray(String s) throws IOException {
         BufferedReader reader;
         String currentLine;
         String[] tokensVal;
