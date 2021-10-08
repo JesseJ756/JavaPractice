@@ -1,7 +1,12 @@
 @startuml
 'https://plantuml.com/sequence-diagram
-
-WordFrequencyFinder : + main()
-WordFrequencyFinder : + printOutput()
+class WordFrequencyFinder
+{
+{static} ArrayList<String> wordArray
++ main()
++ printOutput()
++ countForEachWord()
++ fileWordsToArray()
+}
 
 @enduml
