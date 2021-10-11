@@ -20,7 +20,7 @@ public class WebsiteGenerator
         String author;
         String folder;
         String file;
-        String ex43Dir = "src/main/java/ex41";
+        String ex43Dir = "src/main/java/ex43";
 
         BufferedWriter writer = null;
 
@@ -41,14 +41,18 @@ public class WebsiteGenerator
         System.out.println("Created ." + file);
 
         // MKDIR makes directory
-        new File(ex43Dir + folder).mkdirs();
-        new File(ex43Dir + file).mkdir();
+        new File((ex43Dir + folder)).mkdirs();
 
-        File outputFile = new File(file);
+        File outputFile = new File((ex43Dir + file));
         FileWriter fileWriter = new FileWriter(outputFile);
         writer = new BufferedWriter(fileWriter);
 
-        writer.write("<html><head><title>" + siteName + "</title></head><body><p>This is Body</p></body></html>");
+        writer.write("<html>\n" +
+                "<head>\n" +
+                "   <title>" + siteName + "</title>\n" +
+                "   <meta name=\"author\" content=\"" + author + "\">\n" +
+                "</head>\n" +
+                "</html>");
         writer.close();
 
         createFolder(javaScriptAns, "JavaScript", folder, ex43Dir);
@@ -60,9 +64,9 @@ public class WebsiteGenerator
         String dir = folder + "/" + fileType + "/";
         if (ans.equalsIgnoreCase("y"))
         {
-            System.out.print("Created ." + dir);
+            System.out.println("Created ." + dir);
 
-            File outputFile = new File(ex43Dir + dir);
+            new File((ex43Dir + dir)).mkdirs();
         }
     }
 
@@ -90,10 +94,10 @@ public class WebsiteGenerator
             }
             else
             {
-                System.out.print("Please enter a y or no");
+                System.out.print("Please enter a y or no\n");
             }
 
-            userInput.nextLine();
+            //userInput.nextLine();
         }
 
         return ans;
