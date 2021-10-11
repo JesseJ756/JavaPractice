@@ -18,13 +18,11 @@ public class NameSorter {
 
         ArrayList<String> nameArray;
 
-        // READ file
         try
         {
             nameArray = getInputFromFile("src/main/java/ex41/exercise41_input.txt");
             numOfNames = nameArray.size();
 
-            // sort through names
             Collections.sort(nameArray);
 
             File outputFile = new File("src/main/java/ex41/exercise41_output.txt");
@@ -34,9 +32,6 @@ public class NameSorter {
             writer.write("Total of " + numOfNames + " names\n");
             writer.write("-----------------\n");
 
-
-            // FOR loop, counter to 0, iterate though number of names var
-            // put names from array to file one by one
             for(counter = 0; counter < numOfNames; counter++)
             {
                 writer.write(nameArray.get(counter));
@@ -74,9 +69,6 @@ public class NameSorter {
         reader = new BufferedReader(fileReader);
         currentLine = reader.readLine();
 
-        // WHILE loop, set counter to 0, iterate through file until EOF
-        // put name into array
-        // set number of names var to i
         while(currentLine != null)
         {
             nameArray.add(currentLine);

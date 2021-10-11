@@ -1,0 +1,7 @@
+// METHOD: put file data into ARRAYLIST
+    //WHILE input file line isnt EOF
+        // put name into array
+
+// SORT through names in array by last name
+// FOR names in ARRAYLIST
+    // WRITE names from array to output file one by one
