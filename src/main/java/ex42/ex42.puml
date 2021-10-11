@@ -2,6 +2,6 @@
 'https://plantuml.com/sequence-diagram
 
 ParseData : + main()
-ParseData : + printOutput()
+ParseData : + printOutput(BufferedReader reader)
 
 @enduml

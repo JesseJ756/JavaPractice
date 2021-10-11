@@ -1,6 +1,6 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 FilterRecord : + main()
-FilterRecord : + getInputFromFile()
+FilterRecord : + getInputFromFile(String s)
 
 @enduml

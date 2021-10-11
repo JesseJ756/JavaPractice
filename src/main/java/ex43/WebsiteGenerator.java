@@ -96,8 +96,6 @@ public class WebsiteGenerator
             {
                 System.out.print("Please enter a y or no\n");
             }
-
-            //userInput.nextLine();
         }
 
         return ans;

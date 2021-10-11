@@ -1,0 +1,11 @@
+// ask and SCAN for site name
+// ask and SCAN for site author
+// METHOD: ask to see if user wants to make CSS and/or JavaScript folder. RETURNS Y or N
+    // ask and SCAN for whether folder needs to be made
+
+// MKDIR with site name
+// make NEW HTML FILE under site-name-directory
+// WRITE HTML code under new html file with site name as <TITLE> and author as <META>
+// METHOD: make CSS or JavaScript DIR if user selected y/n
+    // IF answer is y
+        // MKDIR with selected DIR type

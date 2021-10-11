@@ -1,11 +1,8 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-autonumber
+WebsiteGenerator : + main()
+WebsiteGenerator : + createFolder(String ans, String fileType, String folder, String ex43Dir)
+WebsiteGenerator : + askQuestion(String string)
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
 @enduml
