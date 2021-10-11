@@ -3,6 +3,6 @@
 
 
 ProductSearch : + main()
-ProductSearch : + checkFile()
+ProductSearch : + checkFile(String productName)
 
 @enduml

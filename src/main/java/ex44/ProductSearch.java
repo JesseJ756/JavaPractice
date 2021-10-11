@@ -19,17 +19,6 @@ public class ProductSearch
 {
     public static void main(String[] args)
     {
-        // import gson from GitHub and put dependencies into pom.xml
-        // WHILE loop until product is found
-            // ask for product
-            // make Method to search in json file, return 1/0 if product is found
-                //
-            //IF product is found
-                // PRINT: name, price, & quantity
-                // BREAK
-            // ELSE
-                // PRINT: not in inventory
-
         String productName;
         String isInFile;
 

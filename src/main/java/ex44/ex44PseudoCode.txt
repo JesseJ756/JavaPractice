@@ -1,0 +1,17 @@
+// import gson from GitHub and put dependencies into pom.xml
+// WHILE loop until product is found
+    // ask for product
+
+    // METHOD: search in json file, PRINT name, price and quantitiy if found. RETURN y/n if product is found
+        // GET PRODUCTS from Json file and store  in JsonArrayProduct
+        // FOR products in JsonArrayProduct
+            // if user product name == name of product
+                // PRINT name, price and quantitiy
+                // BREAK
+        // RETURN answer
+
+    //IF product is found (y)
+        // PRINT: name, price, & quantity
+        // BREAK
+    // ELSE (n)
+        // PRINT: not in inventory
