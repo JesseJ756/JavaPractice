@@ -4,9 +4,9 @@ class WordFrequencyFinder
 {
 {static} ArrayList<String> wordArray
 + main()
-+ printOutput()
-+ countForEachWord()
-+ fileWordsToArray()
++ printOutput(ArrayList<Integer> wordCount)
++ countForEachWord(ArrayList<String> inputWordArray)
++ fileWordsToArray(String s)
 }
 
 @enduml

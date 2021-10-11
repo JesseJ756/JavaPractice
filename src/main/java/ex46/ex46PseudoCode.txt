@@ -1,0 +1,26 @@
+// METHOD(input file name): put input from file into ArrayList. RETURN ARRAYLIST
+    // WHILE next line of file != EOF
+        // SPLIT ' ' input line for String and put into ArrayLIst
+        // Scan for NEXTLINE of file
+    // RETURN ARRAYLIST
+
+//METHOD(ARRAYLIST): make array list, iterate through input word ARRAYLIST and +1 everytime word is found
+    //FOR word in lineArray
+        //For identifiedWord in identifiedWordArray
+            //IF word == identifiedWord
+                // +1 for # in wordCount array
+                // IsidentifiedWord = 1
+        //IF isidentifiedword is 0
+            //add word to idntifiedWordArray
+            // +1 to # in wordCount array
+
+//METHOD to print ouput
+    //FOR word in identifiedWordArray
+        // PRINT word
+        //FOR i < wordCountArray
+            // print *
+        // print \n
+
+// WHILE loop, set counter to 0, iterate through file until EOF
+// put name into array
+// set number of names var to i

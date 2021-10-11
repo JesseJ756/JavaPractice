@@ -18,22 +18,6 @@ public class WordFrequencyFinder
 
     public static void main(String[] args) throws IOException
     {
-        //Scan for NEXTLINE of file
-        //SPLIT ' ' for space into lineArray
-        //FOR word in lineArray
-            //For identifiedWord in identifiedWordArray
-                //IF word == identifiedWord
-                    // +1 for # in wordCount array
-                    // IsidentifiedWord = 1
-            //IF isidentifiedword is 0
-                //add word to idntifiedWordArray
-                // +1 to # in wordCount array
-        //METHOD to print ouput
-            //FOR word in identifiedWordArray
-                //FOR i < wordCountArray
-                    // print *
-                // print \n
-
         ArrayList<String> inputWordArray;
         ArrayList<Integer> wordCount;
 
@@ -65,6 +49,7 @@ public class WordFrequencyFinder
             System.out.print("\n");
         }
     }
+
     public static ArrayList<Integer> countForEachWord(ArrayList<String> inputWordArray)
     {
         int i;
@@ -108,9 +93,6 @@ public class WordFrequencyFinder
         reader = new BufferedReader(fileReader);
         currentLine = reader.readLine();
 
-        // WHILE loop, set counter to 0, iterate through file until EOF
-        // put name into array
-        // set number of names var to i
         while(currentLine != null)
         {
             tokensVal = currentLine.split(" ");
