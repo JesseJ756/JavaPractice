@@ -11,15 +11,6 @@ import java.util.Scanner;
 public class WordFinder
 {
     public static void main(String[] args) throws IOException {
-        // Scan for name of output file
-        // get String and put file into char array
-        // Method: changes the words utilizes for uses. return char array
-            // WHILE char != '\n'
-                // go over each char in file and put each char into output file until u-t-i-l-i-z-e is scanned
-                    //stop putting char into output file when u is found
-                //if "utilize" is found put "use in output file
-        // Method: make a new output file with name depending on the user. RETURN file name
-        // put finished char array into new output file.
 
         char[] inputCharArray;
         String inputFileName = "src/main/java/ex45/exercise45_input.txt";
@@ -52,7 +43,6 @@ public class WordFinder
         {
             fileString = fileString.concat("\n");
             fileString = fileString.concat(fileScanner.nextLine());
-                    //fileString + "\n" + fileScanner.nextLine();
         }
 
         return fileString.toCharArray();

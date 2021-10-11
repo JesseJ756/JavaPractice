@@ -1,0 +1,14 @@
+// METHOD: get String from file into char array
+    // WHILE file next line != EOF
+        // CONCAT \n and file line
+    // RETURN string
+
+// Scan for name of output file
+// Make NEW FILE using name from user
+
+// Method(char Array, Buffer writer): changes the words utilizes for uses. return char array
+    // FOR each cell in input file char array
+        // IF char array cells [0, 1, 2, 3, 4, 5, 6] == u-t-i-l-i-z-e
+            // skip cell 6 spaces
+            // WRITE 'u', 's', 'e' into writer
+        // ELSE WRITE char array cell into writer
