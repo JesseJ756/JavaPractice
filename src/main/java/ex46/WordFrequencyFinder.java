@@ -20,6 +20,7 @@ public class WordFrequencyFinder
     {
         ArrayList<String> inputWordArray;
         ArrayList<Integer> wordCount;
+        ArrayList<Integer> arrangedWordCount;
 
         String inputFileName = "src/main/java/ex46/exercise46_input.txt";
 
@@ -27,7 +28,45 @@ public class WordFrequencyFinder
 
         wordCount = countForEachWord(inputWordArray);
 
-        printOutput(wordCount);
+        arrangedWordCount = sortHighToLow(wordCount);
+
+        printOutput(arrangedWordCount);
+    }
+
+    private static ArrayList<Integer> sortHighToLow(ArrayList<Integer> wordCount)
+    {
+        int j;
+        boolean hasSwapped = true;
+
+        while(hasSwapped)
+        {
+            hasSwapped = false;
+            for(j = wordCount.size() - 1; j > 0; j--)
+            {
+                if(wordCount.get(j) > wordCount.get(j - 1))
+                {
+                    swapCount(wordCount, j, j - 1);
+                    swapWords(wordArray, j, j - 1);
+                    hasSwapped = true;
+                }
+            }
+        }
+
+        return wordCount;
+    }
+
+    private static void swapWords(ArrayList<String> array, int i, int j)
+    {
+        String word = array.get(i);
+        array.set(i, array.get(j));
+        array.set(j, word);
+    }
+
+    public static void swapCount(ArrayList<Integer> array, int i, int j)
+    {
+        int temp = array.get(i);
+        array.set(i, array.get(j));
+        array.set(j, temp);
     }
 
     public static void printOutput(ArrayList<Integer> wordCount)
@@ -59,13 +98,13 @@ public class WordFrequencyFinder
         for(String word : inputWordArray)
         {
             isIdentifiedWord = 0;
-            System.out.format("word: %s\n", word);
+            // System.out.format("word: %s\n", word);
             for(i = 0; i < wordArray.size(); i++)
             {
                 if(word.equalsIgnoreCase(wordArray.get(i)))
                 {
                     wordCount.set(i, wordCount.get(i) + 1);
-                    System.out.format("wordCount[%d]: %d\n", i, wordCount.get(i));
+                    // System.out.format("wordCount[%d]: %d\n", i, wordCount.get(i));
                     isIdentifiedWord = 1;
                 }
             }
@@ -74,7 +113,7 @@ public class WordFrequencyFinder
             {
                 wordArray.add(word);
                 wordCount.add(1);
-                System.out.format("In if wordCount[%d]: %d\n", i, wordCount.get(i));
+                // System.out.format("In if wordCount[%d]: %d\n", i, wordCount.get(i));
             }
         }
 

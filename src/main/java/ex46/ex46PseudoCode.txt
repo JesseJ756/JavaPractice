@@ -14,6 +14,14 @@
             //add word to idntifiedWordArray
             // +1 to # in wordCount array
 
+// METHOD(count Array): bubble sort the count array so that its sorted highes to lowest
+    // WHILE there is a swap
+        // FOR each cell in count array from highest to lowest
+            // IF array count[j] > array count[j - 1]
+                // swap count[j] and count[j - 1]
+                // swap wordArray[j] and wordArray[j - 1]
+                // swapped = true
+
 //METHOD to print ouput
     //FOR word in identifiedWordArray
         // PRINT word
