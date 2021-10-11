@@ -14,7 +14,6 @@ public class ParseData {
     {
         BufferedReader reader = null;
 
-        // read file
         try
         {
             reader = new BufferedReader(new FileReader("src/main/java/ex42/exercise42_input.txt"));
@@ -22,14 +21,7 @@ public class ParseData {
             System.out.print("Last      First     Salary\n");
             System.out.print("--------------------------\n");
 
-            // WHILE line != null
-            // PRINT letter
-            // find comma in line of file (method?)
-            // PRINT \tab
-
             printOutput(reader);
-
-
         }
         catch (IOException e)
         {
@@ -60,7 +52,6 @@ public class ParseData {
 
         while(currentLine != null)
         {
-            // SPLIT string when ',' is found
             tokensVal = currentLine.split(",", 3);
 
             for(String token : tokensVal)
