@@ -19,6 +19,7 @@ public class ParseData {
 
         try
         {
+            // Allows reading of data from input file
             reader = new BufferedReader(new FileReader("src/main/java/ex42/exercise42_input.txt"));
 
             System.out.print("Last      First     Salary\n");
@@ -37,6 +38,7 @@ public class ParseData {
             {
                 if(reader != null)
                 {
+                    // Always close reader
                     reader.close();
                 }
             }
@@ -47,6 +49,7 @@ public class ParseData {
         }
     }
 
+    // Prints names in nameArray
     public static void printOutput(ArrayList<String> nameArray)
     {
         for(int i = 0; i < nameArray.size(); i++)
@@ -59,6 +62,7 @@ public class ParseData {
 
     }
 
+    // Reads names from input file and puts them in ArrayList
     public static ArrayList<String> inputFileToArray(BufferedReader reader) throws IOException
     {
         String currentLine;

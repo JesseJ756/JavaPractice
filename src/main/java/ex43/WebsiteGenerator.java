@@ -43,10 +43,12 @@ public class WebsiteGenerator
         // MKDIR makes directory
         new File((ex43Dir + folder)).mkdirs();
 
+        // Makes new file
         File outputFile = new File((ex43Dir + file));
         FileWriter fileWriter = new FileWriter(outputFile);
         writer = new BufferedWriter(fileWriter);
 
+        // put HTML code in new file
         writer.write("<html>\n" +
                 "<head>\n" +
                 "   <title>" + siteName + "</title>\n" +
@@ -59,6 +61,7 @@ public class WebsiteGenerator
         createFolder(cssAns, "CSS", folder, ex43Dir);
     }
 
+    //Creates folder if answer is "y"
     private static void createFolder(String ans, String fileType, String folder, String ex43Dir)
     {
         String dir = folder + "/" + fileType + "/";

@@ -26,6 +26,7 @@ public class ProductSearch
 
         File input = new File("src/main/java/ex44/exercise44_input.json");
 
+        // Always ask for product name until one is found
         while(true)
         {
             System.out.print("What is the product name? ");
@@ -59,10 +60,12 @@ public class ProductSearch
             {
                 JsonObject productObject = product.getAsJsonObject();
 
+                // Get property from Json object and place them in a string
                 String name = productObject.get("name").getAsString();
                 String price = productObject.get("price").getAsString();
                 String quantity = productObject.get("quantity").getAsString();
 
+                // Print name, price, & quantity
                 if(name.equals(productName))
                 {
                     System.out.println("Name: " + name);

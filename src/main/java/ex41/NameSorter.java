@@ -23,8 +23,10 @@ public class NameSorter {
             nameArray = getInputFromFile("src/main/java/ex41/exercise41_input.txt");
             numOfNames = nameArray.size();
 
+            // Java sort function
             Collections.sort(nameArray);
 
+            // Allows writing in new file
             File outputFile = new File("src/main/java/ex41/exercise41_output.txt");
             FileWriter fileWriter = new FileWriter(outputFile);
             writer = new BufferedWriter(fileWriter);
@@ -40,6 +42,7 @@ public class NameSorter {
         }
         catch (IOException e)
         {
+            // Catches any exceptions found in code(try)
             e.printStackTrace();
         }
         finally
@@ -48,6 +51,7 @@ public class NameSorter {
             {
                 if(writer != null)
                 {
+                    // Always close writer
                     writer.close();
                 }
             }
@@ -58,6 +62,7 @@ public class NameSorter {
         }
     }
 
+    // Puts input from file into ArrayList
     public static ArrayList<String> getInputFromFile(String s) throws IOException {
         BufferedReader reader;
         String currentLine;

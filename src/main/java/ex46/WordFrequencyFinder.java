@@ -24,10 +24,13 @@ public class WordFrequencyFinder
 
         String inputFileName = "src/main/java/ex46/exercise46_input.txt";
 
+        // put file content into arrayList
         inputWordArray = fileWordsToArray(inputFileName);
 
+        // Makes an int array that counts the number of time each word repeats
         wordCount = countForEachWord(inputWordArray);
 
+        // sorts the count array from highest # to lowest # using Bubble Sort
         arrangedWordCount = sortHighToLow(wordCount);
 
         printOutput(arrangedWordCount);
@@ -38,6 +41,7 @@ public class WordFrequencyFinder
         int j;
         boolean hasSwapped = true;
 
+        // Bubble sort to find the largest number
         while(hasSwapped)
         {
             hasSwapped = false;
@@ -98,22 +102,22 @@ public class WordFrequencyFinder
         for(String word : inputWordArray)
         {
             isIdentifiedWord = 0;
-            // System.out.format("word: %s\n", word);
+
             for(i = 0; i < wordArray.size(); i++)
             {
+                // If it's a word already in word Array
                 if(word.equalsIgnoreCase(wordArray.get(i)))
                 {
                     wordCount.set(i, wordCount.get(i) + 1);
-                    // System.out.format("wordCount[%d]: %d\n", i, wordCount.get(i));
                     isIdentifiedWord = 1;
                 }
             }
 
+            // If its a new word not in wordArray
             if(isIdentifiedWord == 0)
             {
                 wordArray.add(word);
                 wordCount.add(1);
-                // System.out.format("In if wordCount[%d]: %d\n", i, wordCount.get(i));
             }
         }
 
@@ -125,7 +129,7 @@ public class WordFrequencyFinder
         String currentLine;
         String[] tokensVal;
 
-        ArrayList<String> inputwordArray = new ArrayList<>();
+        ArrayList<String> inputWordArray = new ArrayList<>();
 
         File inputFile = new File(s);
         FileReader fileReader = new FileReader(inputFile);
@@ -136,11 +140,12 @@ public class WordFrequencyFinder
         {
             tokensVal = currentLine.split(" ");
 
-            Collections.addAll(inputwordArray, tokensVal);
+            // Adds all of String in tokenVal into inputwordArray
+            Collections.addAll(inputWordArray, tokensVal);
 
             currentLine = reader.readLine();
         }
 
-        return inputwordArray;
+        return inputWordArray;
     }
 }

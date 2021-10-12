@@ -20,11 +20,13 @@ public class WordFinder
         File inputFile = new File(inputFileName);
         Scanner fileScanner = new Scanner(inputFile);
 
+        // puts file content into a char array
         inputCharArray = fileToCharArray(fileScanner);
 
         System.out.print("Name for new file: ");
         String fileName = userInput.nextLine();
 
+        // Make new file and get it ready for writing
         File outputFile = new File("src/main/java/ex45/" + fileName + ".txt");
         FileWriter fileWriter = new FileWriter(outputFile);
         BufferedWriter writer = new BufferedWriter(fileWriter);
@@ -41,6 +43,7 @@ public class WordFinder
         fileString = fileScanner.nextLine();
         while(fileScanner.hasNextLine())
         {
+            // adds to fileString
             fileString = fileString.concat("\n");
             fileString = fileString.concat(fileScanner.nextLine());
         }
