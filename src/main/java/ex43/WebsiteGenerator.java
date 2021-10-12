@@ -94,7 +94,7 @@ public class WebsiteGenerator
             }
             else
             {
-                System.out.print("Please enter a y or no\n");
+                System.out.print("Please enter a y or n\n");
             }
         }
 
