@@ -8,11 +8,14 @@ package ex42;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class ParseData {
     public static void main(String[] args)
     {
         BufferedReader reader = null;
+        ArrayList<String> nameArray;
 
         try
         {
@@ -21,7 +24,8 @@ public class ParseData {
             System.out.print("Last      First     Salary\n");
             System.out.print("--------------------------\n");
 
-            printOutput(reader);
+            nameArray = inputFileToArray(reader);
+            printOutput(nameArray);
         }
         catch (IOException e)
         {
@@ -43,10 +47,23 @@ public class ParseData {
         }
     }
 
-    public static void printOutput(BufferedReader reader) throws IOException
+    public static void printOutput(ArrayList<String> nameArray)
+    {
+        for(int i = 0; i < nameArray.size(); i++)
+        {
+            System.out.format("%-10s", nameArray.get(i));
+
+            if((i % 3) == 2)
+                System.out.print("\n");
+        }
+
+    }
+
+    public static ArrayList<String> inputFileToArray(BufferedReader reader) throws IOException
     {
         String currentLine;
         String[] tokensVal;
+        ArrayList<String> nameArray = new ArrayList<>();
 
         currentLine = reader.readLine();
 
@@ -54,12 +71,11 @@ public class ParseData {
         {
             tokensVal = currentLine.split(",", 3);
 
-            for(String token : tokensVal)
-                System.out.format("%-10s", token);
-
-            System.out.print("\n");
+            Collections.addAll(nameArray, tokensVal);
 
             currentLine = reader.readLine();
         }
+
+        return nameArray;
     }
 }

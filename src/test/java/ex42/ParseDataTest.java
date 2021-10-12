@@ -5,21 +5,40 @@
 
 package ex42;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import java.io.*;
+import java.util.ArrayList;
 
-/**
- * Unit test for simple App.
- */
 public class ParseDataTest
 {
-    /**
-     * Rigorous Test :-)
-     */
+
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void shouldAnswerWithTrue() throws IOException {
+        ArrayList<String> fileArray;
+        ArrayList<String> outputFileArray = new ArrayList<>();
+
+        BufferedReader reader = new BufferedReader(new FileReader("src/test/java/ex42/ex42InputFileTest.txt"));
+
+        fileArray = ParseData.inputFileToArray(reader);
+
+        outputFileArray.add("Michael");
+        outputFileArray.add("Scott");
+        outputFileArray.add("Manager");
+        outputFileArray.add("Dwight");
+        outputFileArray.add("Schrute");
+        outputFileArray.add("ARM");
+        outputFileArray.add("Jim");
+        outputFileArray.add("Halpert");
+        outputFileArray.add("Salesman");
+        outputFileArray.add("Pam");
+        outputFileArray.add("Beesly");
+        outputFileArray.add("Receptionist");
+
+        for(int i = 0; i < outputFileArray.size(); i++)
+        {
+            Assert.assertEquals(outputFileArray.get(i), fileArray.get(i));
+        }
     }
 }
