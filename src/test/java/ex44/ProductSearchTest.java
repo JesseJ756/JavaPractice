@@ -5,18 +5,27 @@
 
 package ex44;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import java.io.File;
 
-/**
- * Unit test for simple App.
- */
 public class ProductSearchTest
 {
     @Test
     public void shouldAnswerWithTrue()
     {
-        assertTrue( true );
+        String ans;
+        String expectedAns = "y";
+
+        File input = new File("src/test/java/ex44/ex44TestFile.json");
+
+        ans = ProductSearch.checkFile("Potato", input);
+
+        Assert.assertEquals(ans, expectedAns);
+
+        ans = ProductSearch.checkFile("Tomato", input);
+
+        Assert.assertEquals(ans, "n");
     }
 }

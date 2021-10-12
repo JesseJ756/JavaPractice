@@ -24,12 +24,14 @@ public class ProductSearch
 
         Scanner userInput = new Scanner(System.in);
 
+        File input = new File("src/main/java/ex44/exercise44_input.json");
+
         while(true)
         {
             System.out.print("What is the product name? ");
             productName = userInput.nextLine();
 
-            isInFile = checkFile(productName);
+            isInFile = checkFile(productName, input);
 
             if (isInFile.equalsIgnoreCase("y"))
             {
@@ -42,10 +44,9 @@ public class ProductSearch
         }
     }
 
-    public static String checkFile(String productName)
+    public static String checkFile(String productName, File input)
     {
         String isInFile = "n";
-        File input = new File("src/main/java/ex44/exercise44_input.json");
 
         try
         {
