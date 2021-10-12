@@ -55,7 +55,7 @@ public class WordFrequencyFinder
         return wordCount;
     }
 
-    private static void swapWords(ArrayList<String> array, int i, int j)
+    public static void swapWords(ArrayList<String> array, int i, int j)
     {
         String word = array.get(i);
         array.set(i, array.get(j));
