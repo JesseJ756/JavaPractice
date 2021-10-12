@@ -34,7 +34,7 @@ public class WordFinder
         writer.close();
     }
 
-    private static char[] fileToCharArray(Scanner fileScanner)
+    public static char[] fileToCharArray(Scanner fileScanner)
     {
         String fileString;
 
@@ -48,7 +48,7 @@ public class WordFinder
         return fileString.toCharArray();
     }
 
-    private static void utilizeToUse(char[] inputCharArray, BufferedWriter writer) throws IOException
+    public static void utilizeToUse(char[] inputCharArray, BufferedWriter writer) throws IOException
     {
         for(int i = 0; i < inputCharArray.length; i++)
         {
